@@ -1,33 +1,33 @@
 ﻿using System.Collections.Generic;
 
-namespace FactoryMethod.RealCode
+namespace FactoryMethod.RealWorldCode
 {
     abstract class Application
     {
-        protected abstract void CreateApplication();
-        protected Application()
-        {
-            CreateApplication();
-        }
+        public abstract Application CreateApplication();
         public List<Technology> Technologies { get; } = new List<Technology>();
     }
 
     class AspNetApplication : Application
     {
-        protected override void CreateApplication()
+        public override Application CreateApplication()
         {
             Technologies.Add(new AspNetMvc());
             Technologies.Add(new CSharp());
             Technologies.Add(new SqlServer());
+
+            return this;
         }
     }
 
     class JavaApplication : Application
     {
-        protected override void CreateApplication()
+        public override Application CreateApplication()
         {
             Technologies.Add(new Java());
             Technologies.Add(new Hibernate());
+
+            return this;
         }
     }
 

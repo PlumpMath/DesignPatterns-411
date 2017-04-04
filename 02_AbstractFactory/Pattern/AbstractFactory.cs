@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace _02_AbstractFactory
+namespace AbstractFactory.Pattern
 {
     abstract class AbstractFactory
     {
@@ -12,10 +8,6 @@ namespace _02_AbstractFactory
         public abstract AbstractProductB CreateProductB();
     }
 
-
-    /// <summary>
-    /// The 'ConcreteFactory1' class
-    /// </summary>
     class ConcreteFactory1 : AbstractFactory
     {
         public override AbstractProductA CreateProductA()
@@ -28,10 +20,6 @@ namespace _02_AbstractFactory
             return new ProductB1();
         }
     }
-
-    /// <summary>
-    /// The 'ConcreteFactory2' class
-    /// </summary>
     class ConcreteFactory2 : AbstractFactory
     {
         public override AbstractProductA CreateProductA()
@@ -45,73 +33,43 @@ namespace _02_AbstractFactory
         }
     }
 
-    /// <summary>
-    /// The 'AbstractProductA' abstract class
-    /// </summary>
     abstract class AbstractProductA
     {
     }
 
-    /// <summary>
-    /// The 'AbstractProductB' abstract class
-    /// </summary>
     abstract class AbstractProductB
     {
         public abstract void Interact(AbstractProductA a);
     }
-
-
-    /// <summary>
-    /// The 'ProductA1' class
-    /// </summary>
     class ProductA1 : AbstractProductA
     {
     }
-
-    /// <summary>
-    /// The 'ProductB1' class
-    /// </summary>
     class ProductB1 : AbstractProductB
     {
         public override void Interact(AbstractProductA a)
         {
-            Console.WriteLine(this.GetType().Name +
-                              " interacts with " + a.GetType().Name);
+            Console.WriteLine(GetType().Name + " interacts with " + a.GetType().Name);
         }
     }
-
-    /// <summary>
-    /// The 'ProductA2' class
-    /// </summary>
     class ProductA2 : AbstractProductA
     {
     }
-
-    /// <summary>
-    /// The 'ProductB2' class
-    /// </summary>
     class ProductB2 : AbstractProductB
     {
         public override void Interact(AbstractProductA a)
         {
-            Console.WriteLine(this.GetType().Name +
-                              " interacts with " + a.GetType().Name);
+            Console.WriteLine(GetType().Name + " interacts with " + a.GetType().Name);
         }
     }
-
-    /// <summary>
-    /// The 'Client' class. Interaction environment for the products.
-    /// </summary>
     class Client
     {
-        private AbstractProductA _abstractProductA;
-        private AbstractProductB _abstractProductB;
+        private readonly AbstractProductA _abstractProductA;
+        private readonly AbstractProductB _abstractProductB;
 
-        // Constructor
         public Client(AbstractFactory factory)
         {
-            _abstractProductB = factory.CreateProductB();
             _abstractProductA = factory.CreateProductA();
+            _abstractProductB = factory.CreateProductB();  
         }
 
         public void Run()

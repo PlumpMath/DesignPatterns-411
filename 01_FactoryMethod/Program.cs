@@ -1,10 +1,16 @@
 ﻿using System;
 using FactoryMethod.Pattern;
-using FactoryMethod.RealCode;
+using FactoryMethod.RealWorldCode;
 
-namespace DesignPatterns
+/*
+ * Фабричный метод (Factory Method) - это паттерн, который определяет интерфейс для создания объектов некоторого класса, но 
+ * непосредственное решение о том, объект какого класса создавать происходит в подклассах.
+ */
+
+
+namespace FactoryMethod
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -21,7 +27,7 @@ namespace DesignPatterns
             //----------------------------------------------------------------//
 
             Console.WriteLine("\nReal code:");
-            Application[] apps = { new AspNetApplication() , new JavaApplication() };         
+            Application[] apps = { new AspNetApplication().CreateApplication() , new JavaApplication().CreateApplication() };         
             foreach (Application app in apps)
             {
                 Console.WriteLine(app.GetType().Name);
