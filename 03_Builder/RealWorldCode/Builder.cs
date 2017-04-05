@@ -16,8 +16,7 @@ namespace Builder.RealWorldCode
 
     abstract class VehicleBuilder
     {
-        protected Vehicle vehicle;
-        public Vehicle Vehicle => vehicle;
+        public Vehicle Vehicle { get; protected set; }
         public abstract void BuildFrame();
         public abstract void BuildEngine();
         public abstract void BuildWheels();
@@ -28,27 +27,27 @@ namespace Builder.RealWorldCode
     {
         public MotorCycleBuilder()
         {
-            vehicle = new Vehicle("MotorCycle");
+            Vehicle = new Vehicle("MotorCycle");
         }
 
         public override void BuildFrame()
         {
-            vehicle["frame"] = "MotorCycle Frame";
+            Vehicle["frame"] = "MotorCycle Frame";
         }
 
         public override void BuildEngine()
         {
-            vehicle["engine"] = "500 cc";
+            Vehicle["engine"] = "500 cc";
         }
 
         public override void BuildWheels()
         {
-            vehicle["wheels"] = "2";
+            Vehicle["wheels"] = "2";
         }
 
         public override void BuildDoors()
         {
-            vehicle["doors"] = "0";
+            Vehicle["doors"] = "0";
         }
     }
 
@@ -56,54 +55,54 @@ namespace Builder.RealWorldCode
     {
         public CarBuilder()
         {
-            vehicle = new Vehicle("Car");
+            Vehicle = new Vehicle("Car");
         }
 
         public override void BuildFrame()
         {
-            vehicle["frame"] = "Car Frame";
+            Vehicle["frame"] = "Car Frame";
         }
 
         public override void BuildEngine()
         {
-            vehicle["engine"] = "2500 cc";
+            Vehicle["engine"] = "2500 cc";
         }
 
         public override void BuildWheels()
         {
-            vehicle["wheels"] = "4";
+            Vehicle["wheels"] = "4";
         }
 
         public override void BuildDoors()
         {
-            vehicle["doors"] = "4";
+            Vehicle["doors"] = "4";
         }
     }
     class ScooterBuilder : VehicleBuilder
     {
         public ScooterBuilder()
         {
-            vehicle = new Vehicle("Scooter");
+            Vehicle = new Vehicle("Scooter");
         }
 
         public override void BuildFrame()
         {
-            vehicle["frame"] = "Scooter Frame";
+            Vehicle["frame"] = "Scooter Frame";
         }
 
         public override void BuildEngine()
         {
-            vehicle["engine"] = "50 cc";
+            Vehicle["engine"] = "50 cc";
         }
 
         public override void BuildWheels()
         {
-            vehicle["wheels"] = "2";
+            Vehicle["wheels"] = "2";
         }
 
         public override void BuildDoors()
         {
-            vehicle["doors"] = "0";
+            Vehicle["doors"] = "0";
         }
     }
 
