@@ -11,9 +11,9 @@
         public abstract Prototype Clone();
     }
 
-    class ConcretePrototype1 : Prototype
+    class ConcretePrototype : Prototype
     {
-        public ConcretePrototype1(string field) : base (field)
+        public ConcretePrototype(string field) : base (field)
         {
         }
         public override Prototype Clone()

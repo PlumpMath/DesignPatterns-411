@@ -27,7 +27,7 @@ namespace CreationalPatterns
         private static void ShowPrototype()
         {
             Console.WriteLine("\nPattern code (Prototype):");
-            Prototype prototype = new ConcretePrototype1("Hellow, world");
+            Prototype prototype = new ConcretePrototype("Hellow, world");
             Prototype protoClone = prototype.Clone();
             Console.WriteLine("protoClone.Field: " + protoClone.Field + " , prototype: " + prototype.Field);
 
