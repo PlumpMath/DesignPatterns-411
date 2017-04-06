@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_AbstractFactory", "02_Ab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Builder", "03_Builder\03_Builder.csproj", "{F095A1D4-EA77-4680-ACE0-FF32190800FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Singleton", "Singleton\04_Singleton.csproj", "{CD6E00C7-C41F-44B6-B161-2EFF39C6F6AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Singleton", "04_Singleton\04_Singleton.csproj", "{CD6E00C7-C41F-44B6-B161-2EFF39C6F6AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Prototype", "05_Prototype\05_Prototype.csproj", "{3FE603C7-47D2-4DAD-B0F1-5F47CBF38D43}"
 EndProject
