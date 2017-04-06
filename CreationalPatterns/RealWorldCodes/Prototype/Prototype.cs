@@ -5,26 +5,30 @@ namespace CreationalPatterns.RealWorldCodes.Prototype
 {
     abstract class ColorPrototype
     {
+        protected readonly int Red;
+        protected readonly int Green;
+        protected readonly int Blue;
+
+        protected ColorPrototype(int red, int green, int blue)
+        {
+            Red = red;
+            Green = green;
+            Blue = blue;
+        }
+
+        public virtual void ShowColor()
+        {
+            Console.WriteLine("Cloning color RGB: {0,3},{1,3},{2,3}", Red, Green, Blue);
+        }
         public abstract ColorPrototype Clone();
     }
 
     class Color : ColorPrototype
     {
-        private readonly int _red;
-        private readonly int _green;
-        private readonly int _blue;
-
-        public Color(int red, int green, int blue)
-        {
-            _red = red;
-            _green = green;
-            _blue = blue;
-        }
+        public Color(int red, int green, int blue) : base(red, green, blue) { }
 
         public override ColorPrototype Clone()
         {
-            Console.WriteLine("Cloning color RGB: {0,3},{1,3},{2,3}",_red, _green, _blue);
-
             return MemberwiseClone() as ColorPrototype;
         }
     }

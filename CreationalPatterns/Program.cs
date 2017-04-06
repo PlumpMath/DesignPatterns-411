@@ -28,9 +28,9 @@ namespace CreationalPatterns
         {
             Console.WriteLine("\nPattern code (Prototype):");
             Prototype prototype = new ConcretePrototype("Hellow, world");
-            Prototype protoClone = prototype.Clone();
-            Console.WriteLine("protoClone.Field: " + protoClone.Field + " , prototype: " + prototype.Field);
-
+            Prototype prototypeClone = prototype.Clone();
+            prototypeClone.ShowField();
+            
             Console.WriteLine("Real code (Prototype):");
             ColorManager colormanager = new ColorManager
             {
@@ -42,9 +42,10 @@ namespace CreationalPatterns
                 ["flame"] = new Color(211, 34, 20)
             };
 
-            Color color1 = colormanager["red"].Clone() as Color;
-            Color color2 = colormanager["peace"].Clone() as Color;
-            Color color3 = colormanager["flame"].Clone() as Color;
+            ColorPrototype redColor = colormanager["red"].Clone();
+            ColorPrototype peaceColor = colormanager["peace"].Clone();
+            redColor.ShowColor();
+            peaceColor.ShowColor();
         }
         private static void ShowSingleton()
         {

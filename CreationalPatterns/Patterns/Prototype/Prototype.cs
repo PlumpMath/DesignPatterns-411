@@ -1,9 +1,15 @@
-﻿namespace CreationalPatterns.Patterns.Prototype
+﻿using System;
+
+namespace CreationalPatterns.Patterns.Prototype
 {
     abstract class Prototype
     {
-        public string Field { get; private set; }
+        protected readonly string Field;
 
+        public virtual void ShowField()
+        {
+            Console.WriteLine(Field);
+        } 
         protected Prototype(string field)
         {
            Field = field;
