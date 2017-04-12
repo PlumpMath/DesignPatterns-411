@@ -1,4 +1,6 @@
-﻿namespace CreationalPatterns.RealWorldCodes.Singleton
+﻿using System.Threading;
+
+namespace CreationalPatterns.RealWorldCodes.Singleton
 {
     public class ConfigurationManager
     {
@@ -6,14 +8,15 @@
         private ConfigurationManager()
         {
         }
-        private static readonly object SyncRoot = new object();
+        private static volatile object _syncRoot = new object();
         public static ConfigurationManager GetInstance()
         {
             // для исключения возможности создания двух объектов 
             // при многопоточном приложении(потокобезопасно)
             if (_configManager == null)
             {
-                lock (SyncRoot)
+                Thread.Sleep(500);
+                lock (_syncRoot) // Закомментировать lock для проверки.
                 {
                     if (_configManager == null)
                         _configManager = new ConfigurationManager();

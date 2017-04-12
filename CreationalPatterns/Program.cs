@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using CreationalPatterns.Patterns.AbstractFactory;
 using CreationalPatterns.Patterns.Builder;
 using CreationalPatterns.Patterns.FactoryMethod;
@@ -53,15 +54,17 @@ namespace CreationalPatterns
             Singleton s1 = Singleton.Instance();
             Singleton s2 = Singleton.Instance();
 
-            if (s1.Equals(s2))
-                Console.WriteLine("Objects are the same instance");
+            Console.WriteLine(s1.Equals(s2) ? "Objects are the same instance" : "Objects aren't the same instance");
 
             Console.WriteLine("Real code (Singleton):");
 
-            ConfigurationManager configManager1 = ConfigurationManager.GetInstance();
-            ConfigurationManager configManager2 = ConfigurationManager.GetInstance();
-            if (configManager1.Equals(configManager2))
-                Console.WriteLine("Objects are the same instance");
+            Thread[] threads = { new Thread(TestMultithreadedSingleton), new Thread(TestMultithreadedSingleton) };
+
+            foreach (Thread thread in threads)
+            {
+                thread.Start();
+            }
+
         }
         private static void ShowBuilder()
         {
@@ -132,6 +135,11 @@ namespace CreationalPatterns
                 foreach (Technology technology in app.Technologies)
                     Console.WriteLine("* " + technology.GetType().Name);
             }
+        }
+        private static void TestMultithreadedSingleton()
+        {
+            ConfigurationManager configManager = ConfigurationManager.GetInstance();
+            Console.WriteLine(configManager.GetHashCode());
         }
     }
 }
