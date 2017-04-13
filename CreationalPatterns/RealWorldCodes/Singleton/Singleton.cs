@@ -8,7 +8,7 @@ namespace CreationalPatterns.RealWorldCodes.Singleton
         private ConfigurationManager()
         {
         }
-        private static volatile object _syncRoot = new object();
+        private static object _syncRoot = new object();
         public static ConfigurationManager GetInstance()
         {
             // для исключения возможности создания двух объектов 
