@@ -8,7 +8,7 @@ namespace CreationalPatterns.RealWorldCodes.Singleton
         private ConfigurationManager()
         {
         }
-        private static object _syncRoot = new object();
+        private static readonly object SyncRoot = new object();
         public static ConfigurationManager GetInstance()
         {
             // для исключения возможности создания двух объектов 
@@ -16,7 +16,7 @@ namespace CreationalPatterns.RealWorldCodes.Singleton
             if (_configManager == null)
             {
                 Thread.Sleep(500);
-                lock (_syncRoot) // Закомментировать lock для проверки.
+                lock (SyncRoot) // Закомментировать lock для проверки.
                 {
                     if (_configManager == null)
                         _configManager = new ConfigurationManager();
