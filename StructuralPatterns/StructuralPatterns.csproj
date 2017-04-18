@@ -44,9 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Patterns\Adapter.cs" />
+    <Compile Include="Patterns\Bridge.cs" />
+    <Compile Include="Patterns\Composite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealWorldCodes\Adapter.cs" />
+    <Compile Include="RealWorldCodes\Bridge.cs" />
+    <Compile Include="RealWorldCodes\Composite.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
