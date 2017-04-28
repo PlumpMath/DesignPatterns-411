@@ -17,13 +17,13 @@ namespace StructuralPatterns
             ShowComposite();
             ShowDecorator();
             ShowFacade();
-            Flyweight();
-            Proxy();
+            ShowFlyweight();
+            ShowProxy();
 
             Console.ReadKey();
         }
 
-        private static void Proxy()
+        private static void ShowProxy()
         {
             Console.WriteLine("\nPattern code (Proxy):");
             Proxy proxy = new Proxy();
@@ -38,7 +38,7 @@ namespace StructuralPatterns
             Console.WriteLine("4 * 2 = " + mathProxy.Mul(4, 2));
             Console.WriteLine("4 / 2 = " + mathProxy.Div(4, 2));
         }
-        private static void Flyweight()
+        private static void ShowFlyweight()
         {
             Console.WriteLine("\nPattern code (Flyweight):");
             int extrinsicstate = 22;
