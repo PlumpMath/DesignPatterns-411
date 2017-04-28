@@ -16,10 +16,72 @@ namespace StructuralPatterns
             ShowBridge();
             ShowComposite();
             ShowDecorator();
+            ShowFacade();
+            Flyweight();
+            Proxy();
 
             Console.ReadKey();
         }
 
+        private static void Proxy()
+        {
+            Console.WriteLine("\nPattern code (Proxy):");
+            Proxy proxy = new Proxy();
+            proxy.Request();
+            Console.WriteLine("\nReal code (Proxy):");
+            // Create math proxy
+            MathProxy mathProxy = new MathProxy();
+
+            // Do the math
+            Console.WriteLine("4 + 2 = " + mathProxy.Add(4, 2));
+            Console.WriteLine("4 - 2 = " + mathProxy.Sub(4, 2));
+            Console.WriteLine("4 * 2 = " + mathProxy.Mul(4, 2));
+            Console.WriteLine("4 / 2 = " + mathProxy.Div(4, 2));
+        }
+        private static void Flyweight()
+        {
+            Console.WriteLine("\nPattern code (Flyweight):");
+            int extrinsicstate = 22;
+            FlyweightFactory factory = new FlyweightFactory();
+            Flyweight fx = factory.GetFlyweight("X");
+            fx.Operation(--extrinsicstate);
+            Flyweight fy = factory.GetFlyweight("Y");
+            fy.Operation(--extrinsicstate);
+            Flyweight fz = factory.GetFlyweight("Z");
+            fz.Operation(--extrinsicstate);
+            UnsharedConcreteFlyweight fu = new UnsharedConcreteFlyweight();
+            fu.Operation(--extrinsicstate);
+            Console.WriteLine("\nReal code (Flyweight):");
+            // Build a document with text
+            string document = "AAZZBBZB";
+            char[] chars = document.ToCharArray();
+            CharacterFactory characterFactory = new CharacterFactory();
+
+            // extrinsic state
+            int pointSize = 10;
+
+            // For each character use a flyweight object
+            foreach (char c in chars)
+            {
+                pointSize++;
+                Character character = characterFactory.GetCharacter(c);
+                character.Display(pointSize);
+            }
+        }
+        private static void ShowFacade()
+        {
+            Console.WriteLine("\nPattern code (Facade):");
+            Facade facade = new Facade();
+            facade.MethodA();
+            facade.MethodB();
+            Console.WriteLine("\nReal code (Facade):");
+            Mortgage mortgage = new Mortgage();
+            Customer customer = new Customer("Ann McKinsey");
+            bool eligible = mortgage.IsEligible(customer, 125000);
+
+            Console.WriteLine("\n" + customer.Name +
+                " has been " + (eligible ? "Approved" : "Rejected"));
+        }
         private static void ShowDecorator()
         {
             Console.WriteLine("\nPattern code (Decorator):");
