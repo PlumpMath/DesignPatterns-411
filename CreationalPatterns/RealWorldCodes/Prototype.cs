@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CreationalPatterns.RealWorldCodes.Prototype
+namespace CreationalPatterns.RealWorldCodes
 {
     abstract class ColorPrototype
     {

@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 
-namespace CreationalPatterns.RealWorldCodes.Singleton
+namespace CreationalPatterns.RealWorldCodes
 {
     public class ConfigurationManager
     {

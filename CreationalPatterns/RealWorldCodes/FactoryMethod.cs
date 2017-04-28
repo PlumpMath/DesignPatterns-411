@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CreationalPatterns.RealWorldCodes.FactoryMethod
+namespace CreationalPatterns.RealWorldCodes
 {
     abstract class Application
     {

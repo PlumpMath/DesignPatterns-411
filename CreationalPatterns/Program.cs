@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Threading;
-using CreationalPatterns.Patterns.AbstractFactory;
-using CreationalPatterns.Patterns.Builder;
-using CreationalPatterns.Patterns.FactoryMethod;
-using CreationalPatterns.Patterns.Prototype;
-using CreationalPatterns.Patterns.Singleton;
-using CreationalPatterns.RealWorldCodes.AbstractFactory;
-using CreationalPatterns.RealWorldCodes.Builder;
-using CreationalPatterns.RealWorldCodes.FactoryMethod;
-using CreationalPatterns.RealWorldCodes.Prototype;
-using CreationalPatterns.RealWorldCodes.Singleton;
-
+using CreationalPatterns.Patterns;
+using CreationalPatterns.RealWorldCodes;
 namespace CreationalPatterns
 {
     class Program
@@ -75,11 +66,11 @@ namespace CreationalPatterns
             Builder b2 = new ConcreteBuilder2();
 
             director.Construct(b1);
-            Patterns.Builder.Product p1 = b1.GetResult();
+            Product p1 = b1.GetResult();
             p1.Show();
 
             director.Construct(b2);
-            Patterns.Builder.Product p2 = b2.GetResult();
+            Product p2 = b2.GetResult();
             p2.Show();
 
             Console.WriteLine("Real code (Builder):");
@@ -123,7 +114,7 @@ namespace CreationalPatterns
             Creator[] creators = { new ConcreteCreatorA(), new ConcreteCreatorB() };
             foreach (Creator creator in creators)
             {
-                Patterns.FactoryMethod.Product product = creator.FactoryMethod();
+                ProductFm product = creator.FactoryMethod();
                 Console.WriteLine(product.GetType().Name);
             }
 

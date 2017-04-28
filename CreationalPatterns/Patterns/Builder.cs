@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CreationalPatterns.Patterns.Builder
+namespace CreationalPatterns.Patterns
 {
     class Director
     {

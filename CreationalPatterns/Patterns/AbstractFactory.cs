@@ -5,7 +5,7 @@
 
 using System;
 
-namespace CreationalPatterns.Patterns.AbstractFactory
+namespace CreationalPatterns.Patterns
 {
     abstract class AbstractFactory
     {

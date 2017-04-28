@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CreationalPatterns.RealWorldCodes.Builder
+namespace CreationalPatterns.RealWorldCodes
 {
     class Shop
     {

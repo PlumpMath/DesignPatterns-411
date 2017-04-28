@@ -3,32 +3,32 @@
  * непосредственное решение о том, объект какого класса создавать происходит в подклассах.
  */
 
-namespace CreationalPatterns.Patterns.FactoryMethod
+namespace CreationalPatterns.Patterns
 {
-    abstract class Product
+    abstract class ProductFm
     {
     }
-    class ConcreteProductA : Product
+    class ConcreteProductA : ProductFm
     {
     }
-    class ConcreteProductB : Product
+    class ConcreteProductB : ProductFm
     {
     }
 
     abstract class Creator
     {
-        public abstract Product FactoryMethod();
+        public abstract ProductFm FactoryMethod();
     }
     class ConcreteCreatorA : Creator
     {
-        public override Product FactoryMethod()
+        public override ProductFm FactoryMethod()
         {
             return new ConcreteProductA();
         }
     }
     class ConcreteCreatorB : Creator
     {
-        public override Product FactoryMethod()
+        public override ProductFm FactoryMethod()
         {
             return new ConcreteProductB();
         }

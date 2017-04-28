@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CreationalPatterns.RealWorldCodes.AbstractFactory
+namespace CreationalPatterns.RealWorldCodes
 {
     /* фабрика для реализации пищевой цепочки на различных континентах
      * хищник есть травоядное животное

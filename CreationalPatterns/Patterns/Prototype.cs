@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CreationalPatterns.Patterns.Prototype
+namespace CreationalPatterns.Patterns
 {
     abstract class Prototype
     {

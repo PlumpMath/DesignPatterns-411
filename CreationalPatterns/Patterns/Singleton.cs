@@ -1,4 +1,4 @@
-﻿namespace CreationalPatterns.Patterns.Singleton
+﻿namespace CreationalPatterns.Patterns
 {
     class Singleton
     {
