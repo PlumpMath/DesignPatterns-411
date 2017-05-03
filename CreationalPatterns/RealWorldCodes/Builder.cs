@@ -27,17 +27,17 @@ namespace CreationalPatterns.RealWorldCodes
     {
         public MotorCycleBuilder()
         {
-            Vehicle = new Vehicle("Мотоцикл");
+            Vehicle = new Vehicle("MotorCycle");
         }
 
         public override void BuildFrame()
         {
-            Vehicle["frame"] = "Рама мотоцикла";
+            Vehicle["frame"] = "MotorCycle Frame";
         }
 
         public override void BuildEngine()
         {
-            Vehicle["engine"] = "5.0 л";
+            Vehicle["engine"] = "500 cc";
         }
 
         public override void BuildWheels()
@@ -55,17 +55,17 @@ namespace CreationalPatterns.RealWorldCodes
     {
         public CarBuilder()
         {
-            Vehicle = new Vehicle("Автомобиль");
+            Vehicle = new Vehicle("Car");
         }
 
         public override void BuildFrame()
         {
-            Vehicle["frame"] = "Рама автомобиля";
+            Vehicle["frame"] = "Car Frame";
         }
 
         public override void BuildEngine()
         {
-            Vehicle["engine"] = "2.5 л";
+            Vehicle["engine"] = "2500 cc";
         }
 
         public override void BuildWheels()
@@ -76,6 +76,33 @@ namespace CreationalPatterns.RealWorldCodes
         public override void BuildDoors()
         {
             Vehicle["doors"] = "4";
+        }
+    }
+    class ScooterBuilder : VehicleBuilder
+    {
+        public ScooterBuilder()
+        {
+            Vehicle = new Vehicle("Scooter");
+        }
+
+        public override void BuildFrame()
+        {
+            Vehicle["frame"] = "Scooter Frame";
+        }
+
+        public override void BuildEngine()
+        {
+            Vehicle["engine"] = "50 cc";
+        }
+
+        public override void BuildWheels()
+        {
+            Vehicle["wheels"] = "2";
+        }
+
+        public override void BuildDoors()
+        {
+            Vehicle["doors"] = "0";
         }
     }
 
@@ -98,11 +125,11 @@ namespace CreationalPatterns.RealWorldCodes
         public void Show()
         {
             Console.WriteLine("\n---------------------------");
-            Console.WriteLine("Тип транспортного средства: {0}", _vehicleType);
-            Console.WriteLine(" Рама : {0}", _parts["frame"]);
-            Console.WriteLine(" Двигатель : {0}", _parts["engine"]);
-            Console.WriteLine(" Колеса: {0}", _parts["wheels"]);
-            Console.WriteLine(" Двери : {0}", _parts["doors"]);
+            Console.WriteLine("Vehicle Type: {0}", _vehicleType);
+            Console.WriteLine(" Frame : {0}", _parts["frame"]);
+            Console.WriteLine(" Engine : {0}", _parts["engine"]);
+            Console.WriteLine(" #Wheels: {0}", _parts["wheels"]);
+            Console.WriteLine(" #Doors : {0}", _parts["doors"]);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace CreationalPatterns.RealWorldCodes
 
         public virtual void ShowColor()
         {
-            Console.WriteLine("Скопированный цвет: {0,3},{1,3},{2,3}", Red, Green, Blue);
+            Console.WriteLine("Cloning color RGB: {0,3},{1,3},{2,3}", Red, Green, Blue);
         }
         public abstract ColorPrototype Clone();
     }

@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-/*
- * Строитель (Builder) - шаблон проектирования, который инкапсулирует создание объекта и позволяет разделить его на различные этапы.
- */
-
 namespace CreationalPatterns.Patterns
 {
     class Director
@@ -29,12 +25,12 @@ namespace CreationalPatterns.Patterns
 
         public override void BuildPartA()
         {
-            _product.Add(" *Часть А");
+            _product.Add(" *PartA");
         }
 
         public override void BuildPartB()
         {
-            _product.Add(" *Часть B");
+            _product.Add(" *PartB");
         }
 
         public override Product GetResult()
@@ -49,12 +45,12 @@ namespace CreationalPatterns.Patterns
 
         public override void BuildPartA()
         {
-            _product.Add(" *Часть X");
+            _product.Add(" *PartX");
         }
 
         public override void BuildPartB()
         {
-            _product.Add(" *Часть Y");
+            _product.Add(" *PartY");
         }
 
         public override Product GetResult()
@@ -75,7 +71,7 @@ namespace CreationalPatterns.Patterns
 
         public void Show()
         {
-            Console.WriteLine("Составные части товара:");
+            Console.WriteLine("Product Parts");
             foreach (string part in _parts)
                 Console.WriteLine(part);
         }
