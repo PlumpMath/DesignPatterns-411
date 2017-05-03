@@ -18,6 +18,7 @@ namespace CreationalPatterns
 
         private static void ShowPrototype()
         {
+            Console.WriteLine("================================================");
             Console.WriteLine("\nPattern code (Prototype):");
             Prototype prototype = new ConcretePrototype("Hellow, world");
             Prototype prototypeClone = prototype.Clone();
@@ -41,7 +42,8 @@ namespace CreationalPatterns
         }
         private static void ShowSingleton()
         {
-            Console.WriteLine("\nPattern code (Singleton):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (Singleton):");
             Singleton s1 = Singleton.Instance();
             Singleton s2 = Singleton.Instance();
 
@@ -51,15 +53,17 @@ namespace CreationalPatterns
 
             Thread[] threads = { new Thread(TestMultithreadedSingleton), new Thread(TestMultithreadedSingleton) };
 
-            foreach (Thread thread in threads)
+            for (var index = 0; index < threads.Length; index++)
             {
-                thread.Start();
+                threads[index].Start();
+                if (index == threads.Length - 1)
+                    threads[index].Join();
             }
-
         }
         private static void ShowBuilder()
         {
-            Console.WriteLine("\nPattern code (Builder):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (Builder):");
             Director director = new Director();
 
             Builder b1 = new ConcreteBuilder1();
@@ -90,7 +94,8 @@ namespace CreationalPatterns
         }
         private static void ShowAbstractFactory()
         {
-            Console.WriteLine("\nPattern code (AbstractFactory):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (AbstractFactory):");
             AbstractFactory factory1 = new ConcreteFactory1();
             Client client1 = new Client(factory1);
             client1.Run();
@@ -110,7 +115,8 @@ namespace CreationalPatterns
         }
         private static void ShowFactoryMethod()
         {
-            Console.WriteLine("\nPattern code (FactoryMethod):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (FactoryMethod):");
             Creator[] creators = { new ConcreteCreatorA(), new ConcreteCreatorB() };
             foreach (Creator creator in creators)
             {
