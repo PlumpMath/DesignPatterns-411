@@ -18,12 +18,13 @@ namespace CreationalPatterns
 
         private static void ShowPrototype()
         {
-            Console.WriteLine("\nPattern code (Prototype):");
-            Prototype prototype = new ConcretePrototype("Hellow, world");
+            Console.WriteLine("=====================================================");
+            Console.WriteLine("Код шаблона (Prototype):");
+            Prototype prototype = new ConcretePrototype("Привет, мир");
             Prototype prototypeClone = prototype.Clone();
             prototypeClone.ShowField();
-            
-            Console.WriteLine("Real code (Prototype):");
+
+            Console.WriteLine("Применение шаблона в реальных ситуациях (Prototype):");
             ColorManager colormanager = new ColorManager
             {
                 ["red"] = new Color(255, 0, 0),
@@ -41,25 +42,26 @@ namespace CreationalPatterns
         }
         private static void ShowSingleton()
         {
-            Console.WriteLine("\nPattern code (Singleton):");
+            Console.WriteLine("=====================================================");
+            Console.WriteLine("Код шаблона (Singleton):");
             Singleton s1 = Singleton.Instance();
             Singleton s2 = Singleton.Instance();
+            Console.WriteLine(s1.Equals(s2) ? "Ссылки экземпляров объектов эквивалентны" : "Ссылки экземпляров объектов указывают на разные ячейки памяти");
 
-            Console.WriteLine(s1.Equals(s2) ? "Objects are the same instance" : "Objects aren't the same instance");
+            Console.WriteLine("Применение шаблона в реальных ситуациях (Singleton):");
 
-            Console.WriteLine("Real code (Singleton):");
-
-            Thread[] threads = { new Thread(TestMultithreadedSingleton), new Thread(TestMultithreadedSingleton) };
-
-            foreach (Thread thread in threads)
+            Thread[] threads = { new Thread(TestMultithreadedSingleton), new Thread(TestMultithreadedSingleton), new Thread(TestMultithreadedSingleton) };
+            for (var index = 0; index < threads.Length; index++)
             {
-                thread.Start();
+                threads[index].Start();
+                if (index == threads.Length - 1)
+                    threads[index].Join();
             }
-
         }
         private static void ShowBuilder()
         {
-            Console.WriteLine("\nPattern code (Builder):");
+            Console.WriteLine("=====================================================");
+            Console.WriteLine("Код шаблона (Builder):");
             Director director = new Director();
 
             Builder b1 = new ConcreteBuilder1();
@@ -73,14 +75,10 @@ namespace CreationalPatterns
             Product p2 = b2.GetResult();
             p2.Show();
 
-            Console.WriteLine("Real code (Builder):");
+            Console.WriteLine("Применение шаблона в реальных ситуациях (Builder):");
             Shop shop = new Shop();
 
-            VehicleBuilder builder = new ScooterBuilder();
-            shop.Construct(builder);
-            builder.Vehicle.Show();
-
-            builder = new CarBuilder();
+            VehicleBuilder builder = new CarBuilder();
             shop.Construct(builder);
             builder.Vehicle.Show();
 
@@ -90,7 +88,8 @@ namespace CreationalPatterns
         }
         private static void ShowAbstractFactory()
         {
-            Console.WriteLine("\nPattern code (AbstractFactory):");
+            Console.WriteLine("=====================================================");
+            Console.WriteLine("Код шаблона (AbstractFactory):");
             AbstractFactory factory1 = new ConcreteFactory1();
             Client client1 = new Client(factory1);
             client1.Run();
@@ -99,7 +98,7 @@ namespace CreationalPatterns
             Client client2 = new Client(factory2);
             client2.Run();
 
-            Console.WriteLine("Real code (AbstractFactory):");
+            Console.WriteLine("Применение шаблона в реальных ситуациях (AbstractFactory):");
             ContinentFactory africa = new AfricaFactory();
             AnimalWorld world = new AnimalWorld(africa);
             world.RunFoodChain();
@@ -110,15 +109,16 @@ namespace CreationalPatterns
         }
         private static void ShowFactoryMethod()
         {
-            Console.WriteLine("\nPattern code (FactoryMethod):");
+            Console.WriteLine("=====================================================");
+            Console.WriteLine("Код шаблона (FactoryMethod):");
             Creator[] creators = { new ConcreteCreatorA(), new ConcreteCreatorB() };
             foreach (Creator creator in creators)
             {
-                ProductFm product = creator.FactoryMethod();
+                Good product = creator.FactoryMethod();
                 Console.WriteLine(product.GetType().Name);
             }
 
-            Console.WriteLine("Real code (FactoryMethod):");
+            Console.WriteLine("Применение шаблона в реальных ситуациях (FactoryMethod):");
             Application[] apps = { new AspNetApplication().CreateApplication(), new JavaApplication().CreateApplication() };
             foreach (Application app in apps)
             {

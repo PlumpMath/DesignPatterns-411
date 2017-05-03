@@ -1,5 +1,5 @@
 ﻿/*
- * Абстрактная фабрика" (Abstract Factory) предоставляет интерфейс для создания 
+ * Абстрактная фабрика (Abstract Factory) предоставляет интерфейс для создания 
  * семейств связанных или зависимых объектов без указания их конкретных классов.
  */
 
@@ -53,7 +53,7 @@ namespace CreationalPatterns.Patterns
     {
         public override void Interact(AbstractProductA a)
         {
-            Console.WriteLine(GetType().Name + " interacts with " + a.GetType().Name);
+            Console.WriteLine(GetType().Name + " взаимодействует с " + a.GetType().Name);
         }
     }
     class ProductA2 : AbstractProductA
@@ -63,7 +63,7 @@ namespace CreationalPatterns.Patterns
     {
         public override void Interact(AbstractProductA a)
         {
-            Console.WriteLine(GetType().Name + " interacts with " + a.GetType().Name);
+            Console.WriteLine(GetType().Name + " взаимодействует с " + a.GetType().Name);
         }
     }
     class Client

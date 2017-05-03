@@ -2,7 +2,8 @@
 
 namespace CreationalPatterns.RealWorldCodes
 {
-    /* фабрика для реализации пищевой цепочки на различных континентах
+    /* 
+     * фабрика для реализации пищевой цепочки на различных континентах
      * хищник есть травоядное животное
     */
     abstract class ContinentFactory
@@ -52,7 +53,7 @@ namespace CreationalPatterns.RealWorldCodes
     {
         public override void Eat(Herbivore h)
         {
-            Console.WriteLine(GetType().Name +" eats " + h.GetType().Name);
+            Console.WriteLine(GetType().Name + " ест " + h.GetType().Name);
         }
     }
 
@@ -64,7 +65,7 @@ namespace CreationalPatterns.RealWorldCodes
     {
         public override void Eat(Herbivore h)
         {
-            Console.WriteLine(GetType().Name + " eats " + h.GetType().Name);
+            Console.WriteLine(GetType().Name + " ест " + h.GetType().Name);
         }
     }
 

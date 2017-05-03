@@ -1,4 +1,10 @@
-﻿namespace CreationalPatterns.Patterns
+﻿/*
+ * Одиночка (Singleton, Синглтон) - порождающий паттерн, который гарантирует, 
+ * что для определенного класса будет создан только один объект, 
+ * а также предоставит к этому объекту точку доступа.
+ */
+
+namespace CreationalPatterns.Patterns
 {
     class Singleton
     {

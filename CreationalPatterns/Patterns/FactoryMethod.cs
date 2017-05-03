@@ -5,32 +5,32 @@
 
 namespace CreationalPatterns.Patterns
 {
-    abstract class ProductFm
+    abstract class Good
     {
     }
-    class ConcreteProductA : ProductFm
+    class ConcreteGoodA : Good
     {
     }
-    class ConcreteProductB : ProductFm
+    class ConcreteGoodB : Good
     {
     }
 
     abstract class Creator
     {
-        public abstract ProductFm FactoryMethod();
+        public abstract Good FactoryMethod();
     }
     class ConcreteCreatorA : Creator
     {
-        public override ProductFm FactoryMethod()
+        public override Good FactoryMethod()
         {
-            return new ConcreteProductA();
+            return new ConcreteGoodA();
         }
     }
     class ConcreteCreatorB : Creator
     {
-        public override ProductFm FactoryMethod()
+        public override Good FactoryMethod()
         {
-            return new ConcreteProductB();
+            return new ConcreteGoodB();
         }
     }
 }
