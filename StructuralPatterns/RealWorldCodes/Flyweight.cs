@@ -3,9 +3,6 @@ using System.Collections.Generic;
 
 namespace StructuralPatterns.RealWorldCodes
 {
-    /// <summary>
-    /// The 'FlyweightFactory' class
-    /// </summary>
     class CharacterFactory
     {
         private readonly Dictionary<char, Character> _characters = new Dictionary<char, Character>();
@@ -37,9 +34,6 @@ namespace StructuralPatterns.RealWorldCodes
         }
     }
 
-    /// <summary>
-    /// The 'Flyweight' abstract class
-    /// </summary>
     abstract class Character
     {
         protected char Symbol;
@@ -52,12 +46,8 @@ namespace StructuralPatterns.RealWorldCodes
         public abstract void Display(int pointSize);
     }
 
-    /// <summary>
-    /// A 'ConcreteFlyweight' class
-    /// </summary>
     class CharacterA : Character
     {
-        // Constructor
         public CharacterA()
         {
             Symbol = 'A';
@@ -74,12 +64,8 @@ namespace StructuralPatterns.RealWorldCodes
         }
     }
 
-    /// <summary>
-    /// A 'ConcreteFlyweight' class
-    /// </summary>
     class CharacterB : Character
     {
-        // Constructor
         public CharacterB()
         {
             Symbol = 'B';
@@ -96,14 +82,8 @@ namespace StructuralPatterns.RealWorldCodes
         }
 
     }
-
-
-    /// <summary>
-    /// A 'ConcreteFlyweight' class
-    /// </summary>
     class CharacterZ : Character
     {
-        // Constructor
         public CharacterZ()
         {
             Symbol = 'Z';

@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+/*
+ * Builder separates the construction of a complex object 
+ * from its representation so that the same construction process can create different representations.
+ */
 
 namespace CreationalPatterns.Patterns
 {

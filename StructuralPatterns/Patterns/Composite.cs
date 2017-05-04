@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * Composite composes objects into tree structures to represent part-whole hierarchies.
+ * Composite lets clients treat individual objects and compositions of objects uniformly.
+ */
 
 namespace StructuralPatterns.Patterns
 {

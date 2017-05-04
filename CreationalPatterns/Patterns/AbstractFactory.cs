@@ -1,6 +1,6 @@
 ﻿/*
- * Абстрактная фабрика" (Abstract Factory) предоставляет интерфейс для создания 
- * семейств связанных или зависимых объектов без указания их конкретных классов.
+ * Abstract Factory provides an interface for creating families of related 
+ * or dependent objects without specifying their concrete classes.
  */
 
 using System;

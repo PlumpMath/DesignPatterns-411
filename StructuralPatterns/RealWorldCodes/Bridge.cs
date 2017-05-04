@@ -12,12 +12,12 @@ namespace StructuralPatterns.RealWorldCodes
     {
         public void Build()
         {
-            Console.WriteLine("С помощью компилятора C++ компилируем программу в бинарный код");
+            Console.WriteLine("Using the C ++ compiler, the program is compiled into binary code");
         }
 
         public void Execute()
         {
-            Console.WriteLine("Запускаем исполняемый файл программы");
+            Console.WriteLine("Run the executable file of the program");
         }
     }
 
@@ -25,13 +25,13 @@ namespace StructuralPatterns.RealWorldCodes
     {
         public void Build()
         {
-            Console.WriteLine("С помощью компилятора Roslyn компилируем исходный код в файл exe");
+            Console.WriteLine("Using the Roslyn compiler, the source code is compiled into an exe file");
         }
 
         public void Execute()
         {
-            Console.WriteLine("JIT компилирует программу бинарный код");
-            Console.WriteLine("CLR выполняет скомпилированный бинарный код");
+            Console.WriteLine("The JIT compiles a binary code");
+            Console.WriteLine("The CLR executes the compiled binary code");
         }
     }
 
@@ -61,7 +61,7 @@ namespace StructuralPatterns.RealWorldCodes
         }
         public override void EarnMoney()
         {
-            Console.WriteLine("Получаем оплату за выполненный заказ");
+            Console.WriteLine("You receive payment for the executed order");
         }
     }
     class CorporateProgrammer : Programmer
@@ -72,7 +72,7 @@ namespace StructuralPatterns.RealWorldCodes
         }
         public override void EarnMoney()
         {
-            Console.WriteLine("Получаем в конце месяца зарплату");
+            Console.WriteLine("You get a salary at the end of the month");
         }
     }
 }

@@ -1,4 +1,8 @@
-﻿namespace CreationalPatterns.Patterns
+﻿/*
+ * Singleton ensures a class has only one instance and provide a global point of access to it.
+ */
+
+namespace CreationalPatterns.Patterns
 {
     class Singleton
     {

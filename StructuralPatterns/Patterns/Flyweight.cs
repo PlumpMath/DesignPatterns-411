@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * Flyweight uses sharing to support large numbers of fine-grained objects efficiently.
+ */
 
 namespace StructuralPatterns.Patterns
 {
@@ -41,8 +41,7 @@ namespace StructuralPatterns.Patterns
     {
         public override void Operation(int extrinsicstate)
         {
-            Console.WriteLine("UnsharedConcreteFlyweight: " +
-              extrinsicstate);
+            Console.WriteLine("UnsharedConcreteFlyweight: " + extrinsicstate);
         }
     }
 }

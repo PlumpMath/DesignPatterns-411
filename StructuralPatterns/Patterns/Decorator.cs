@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * Decorators attach additional responsibilities to an object dynamically. 
+ * Decorators provide a flexible alternative to subclassing for extending functionality.
+ */
 
 namespace StructuralPatterns.Patterns
 {

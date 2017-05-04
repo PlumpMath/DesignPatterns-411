@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StructuralPatterns.RealWorldCodes
+﻿namespace StructuralPatterns.RealWorldCodes
 {
-    /// <summary>
-    /// The 'Subject interface
-    /// </summary>
     public interface IMath
     {
         double Add(double x, double y);
@@ -17,9 +8,6 @@ namespace StructuralPatterns.RealWorldCodes
         double Div(double x, double y);
     }
 
-    /// <summary>
-    /// The 'RealSubject' class
-    /// </summary>
     class Math : IMath
     {
         public double Add(double x, double y) { return x + y; }
@@ -28,9 +16,6 @@ namespace StructuralPatterns.RealWorldCodes
         public double Div(double x, double y) { return x / y; }
     }
 
-    /// <summary>
-    /// The 'Proxy Object' class
-    /// </summary>
     class MathProxy : IMath
     {
         private readonly Math _math = new Math();

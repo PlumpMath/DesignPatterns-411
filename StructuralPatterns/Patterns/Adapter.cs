@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+/*
+ * Adapter converts the interface of a class into another interface clients expect. 
+ * Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
+ */
 
 namespace StructuralPatterns.Patterns
 {

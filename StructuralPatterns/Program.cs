@@ -21,7 +21,8 @@ namespace StructuralPatterns
 
         private static void ShowProxy()
         {
-            Console.WriteLine("\nPattern code (Proxy):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (Proxy):");
             Proxy proxy = new Proxy();
             proxy.Request();
             Console.WriteLine("\nReal code (Proxy):");
@@ -36,7 +37,8 @@ namespace StructuralPatterns
         }
         private static void ShowFlyweight()
         {
-            Console.WriteLine("\nPattern code (Flyweight):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (Flyweight):");
             int extrinsicstate = 22;
             FlyweightFactory factory = new FlyweightFactory();
             Flyweight fx = factory.GetFlyweight("X");
@@ -66,7 +68,8 @@ namespace StructuralPatterns
         }
         private static void ShowFacade()
         {
-            Console.WriteLine("\nPattern code (Facade):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (Facade):");
             Facade facade = new Facade();
             facade.MethodA();
             facade.MethodB();
@@ -80,7 +83,8 @@ namespace StructuralPatterns
         }
         private static void ShowDecorator()
         {
-            Console.WriteLine("\nPattern code (Decorator):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (Decorator):");
             ConcreteComponent c = new ConcreteComponent();
             ConcreteDecoratorA d1 = new ConcreteDecoratorA();
             ConcreteDecoratorB d2 = new ConcreteDecoratorB();
@@ -111,7 +115,8 @@ namespace StructuralPatterns
         }
         private static void ShowComposite()
         {
-            Console.WriteLine("\nPattern code (Composite):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (Composite):");
             Composite root = new Composite("root");
             root.Add(new Leaf("Leaf A"));
             root.Add(new Leaf("Leaf B"));
@@ -149,7 +154,8 @@ namespace StructuralPatterns
         }
         private static void ShowBridge()
         {
-            Console.WriteLine("\nPattern code (Bridge):");
+            Console.WriteLine("================================================");
+            Console.WriteLine("Pattern code (Bridge):");
             Abstraction ab = new RefinedAbstraction();
             ab.Implementor = new ConcreteImplementorA();
             ab.Operation();
@@ -166,6 +172,7 @@ namespace StructuralPatterns
         }
         private static void ShowAdapter()
         {
+            Console.WriteLine("================================================");
             Console.WriteLine("Pattern code (Adapter):");
             Target target = new Adapter();
             target.Request();

@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * Façade provides a unified interface to a set of interfaces in a subsystem.
+ * Façade defines a higher-level interface that makes the subsystem easier to use.
+ */
 
 namespace StructuralPatterns.Patterns
 {

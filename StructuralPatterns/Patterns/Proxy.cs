@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * Proxy provides a surrogate or placeholder for another object to control access to it.
+ */
 
 namespace StructuralPatterns.Patterns
 {
-    /// <summary>
-    /// The 'Subject' abstract class
-    /// </summary>
     abstract class Subject
     {
         public abstract void Request();
     }
 
-    /// <summary>
-    /// The 'RealSubject' class
-    /// </summary>
     class RealSubject : Subject
     {
         public override void Request()
@@ -25,9 +19,6 @@ namespace StructuralPatterns.Patterns
         }
     }
 
-    /// <summary>
-    /// The 'Proxy' class
-    /// </summary>
     class Proxy : Subject
     {
         private RealSubject _realSubject;

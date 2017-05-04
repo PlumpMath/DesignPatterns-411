@@ -2,9 +2,6 @@
 
 namespace CreationalPatterns.RealWorldCodes
 {
-    /* фабрика для реализации пищевой цепочки на различных континентах
-     * хищник есть травоядное животное
-    */
     abstract class ContinentFactory
     {
         public abstract Herbivore CreateHerbivore();

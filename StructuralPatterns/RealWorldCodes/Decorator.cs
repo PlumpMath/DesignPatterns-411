@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StructuralPatterns.RealWorldCodes
+﻿namespace StructuralPatterns.RealWorldCodes
 {
     abstract class Pizza
     {
@@ -18,7 +12,7 @@ namespace StructuralPatterns.RealWorldCodes
 
     class ItalianPizza : Pizza
     {
-        public ItalianPizza() : base("Итальянская пицца")
+        public ItalianPizza() : base("Italian pizza")
         { }
         public override int GetCost()
         {
@@ -27,7 +21,7 @@ namespace StructuralPatterns.RealWorldCodes
     }
     class BulgerianPizza : Pizza
     {
-        public BulgerianPizza() : base("Болгарская пицца")
+        public BulgerianPizza() : base("Bulgarian pizza")
         { }
         public override int GetCost()
         {
@@ -47,7 +41,7 @@ namespace StructuralPatterns.RealWorldCodes
 
     class TomatoPizza : PizzaDecorator
     {
-        public TomatoPizza(Pizza p) : base(p.Name + ", с томатами", p)
+        public TomatoPizza(Pizza p) : base(p.Name + ", with tomatoes", p)
         { }
 
         public override int GetCost()
@@ -59,7 +53,7 @@ namespace StructuralPatterns.RealWorldCodes
     class CheesePizza : PizzaDecorator
     {
         public CheesePizza(Pizza p)
-            : base(p.Name + ", с сыром", p)
+            : base(p.Name + ", with cheese", p)
         { }
 
         public override int GetCost()

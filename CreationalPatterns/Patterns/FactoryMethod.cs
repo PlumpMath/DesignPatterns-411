@@ -1,6 +1,7 @@
 ﻿/*
- * Фабричный метод (Factory Method) - это паттерн, который определяет интерфейс для создания объектов некоторого класса, но 
- * непосредственное решение о том, объект какого класса создавать происходит в подклассах.
+ * Factory Method defines an interface for creating an object, 
+ * but let subclasses decide which class to instantiate. 
+ * Factory Method lets a class defer instantiation to subclasses.
  */
 
 namespace CreationalPatterns.Patterns
